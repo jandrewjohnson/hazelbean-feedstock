@@ -54,6 +54,7 @@ requirements:
     - pygeoprocessing
     - pyqt
     - python
+    - python-pptx
     - pyyaml
     - qtawesome
     - qtpy
