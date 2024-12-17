@@ -1,5 +1,5 @@
 {% set name = "hazelbean" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,30 +7,30 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hazelbean-{{ version }}.tar.gz
-  sha256: 43cda7cf51ed5a57b3bf32665f572ff245e84a33d977e85fcc42eb0e13b99466
-  patches:
-      - 0001-remove-unnecessary-fiona-import.patch
+  sha256: 42983d0f56a43449c5d2dde2dea12991157c2693265743e5a4b376e005081b16
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
-  skip: True  # [py>=312]
+  number: 0
+  skip: true  # [py>=312]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython <3                              # [build_platform != target_platform]
+    - cython >3                              # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - wheel
   host:
     - python
     - pip
-    - cython <3
+    - cython >3
     - numpy
-    - setuptools
+    - setuptools <70
     - setuptools_scm
+    - wheel
   run:
     - Pyro4
     - aenum
@@ -38,6 +38,9 @@ requirements:
     - dask
     - descartes
     - geopandas
+    - google-auth
+    - google-auth-oauthlib
+    - google-api-python-client
     - google-cloud-datastore
     - google-cloud-storage
     - markdown
@@ -51,6 +54,7 @@ requirements:
     - pygeoprocessing
     - pyqt
     - python
+    - python-pptx
     - pyyaml
     - qtawesome
     - qtpy
@@ -58,6 +62,8 @@ requirements:
     - scikit-learn
     - scipy
     - seaborn
+    - setuptools <70
+    - setuptools_scm
     - shapely
     - sip
     - six
@@ -68,7 +74,7 @@ requirements:
 
   # Packages that are optional at runtime but must match a specification when installed.
   run_constrained:
-      - natcap.invest ==3.11.0
+    - natcap.invest ==3.11.0
 
 
 test:
