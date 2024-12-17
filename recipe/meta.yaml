@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hazelbean-{{ version }}.tar.gz
   sha256: 42983d0f56a43449c5d2dde2dea12991157c2693265743e5a4b376e005081b16
-  patches:
-    - 0001-remove-unnecessary-fiona-import.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
