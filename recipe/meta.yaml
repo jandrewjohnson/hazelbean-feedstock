@@ -36,6 +36,7 @@ requirements:
     - dask
     - descartes
     - geopandas
+    - google-api-python-client
     - google-cloud-datastore
     - google-cloud-storage
     - markdown
