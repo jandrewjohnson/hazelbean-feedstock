@@ -59,6 +59,8 @@ requirements:
     - scikit-learn
     - scipy
     - seaborn
+    - setuptools
+    - setuptools_scm
     - shapely
     - sip
     - six
