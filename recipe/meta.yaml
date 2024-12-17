@@ -36,6 +36,8 @@ requirements:
     - dask
     - descartes
     - geopandas
+    - google-auth
+    - google-auth-oauthlib
     - google-api-python-client
     - google-cloud-datastore
     - google-cloud-storage
