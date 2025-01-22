@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   skip: true  # [py>=312]
 
 requirements:
@@ -71,6 +71,7 @@ requirements:
     - taskgraph
     - xarray
     - xlrd
+    - libgdal-hdf5
 
   # Packages that are optional at runtime but must match a specification when installed.
   run_constrained:
