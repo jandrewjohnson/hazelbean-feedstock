@@ -35,22 +35,28 @@ requirements:
     - Pyro4
     - aenum
     - anytree
+    - cython
     - dask
     - descartes
+    - gdal
     - geopandas
+    - google-api-python-client
     - google-auth
     - google-auth-oauthlib
-    - google-api-python-client
+    - google-cloud
     - google-cloud-datastore
     - google-cloud-storage
+    - libgdal-hdf5
     - markdown
+    - matplotlib
     - matplotlib-base
+    - natcap.invest
     - netcdf4
     - numpy
     - openpyxl
-    - gdal
     - pandas
     - pandoc
+    - pillow
     - pygeoprocessing
     - pyqt
     - python
@@ -69,9 +75,10 @@ requirements:
     - six
     - statsmodels
     - taskgraph
+    - tqdm
+    - winshell
     - xarray
     - xlrd
-    - libgdal-hdf5
 
   # Packages that are optional at runtime but must match a specification when installed.
   run_constrained:
